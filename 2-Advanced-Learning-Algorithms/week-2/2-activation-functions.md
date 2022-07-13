@@ -17,5 +17,9 @@ Moreover, the ReLU function is computationally less intensive since (i) it just 
 
 - **Linear Activation Function g(z) = z**
 
+## Choosing Activation Functions
+- - - -
+
 <p align="center"><img src="./img/common-activation-functions.png" /></p>
 <p align="center"><img src="./img/output-layer.png" /></p>
+<p align="center"><img src="./img/choosing-activation-functions-summary.png" /></p>
