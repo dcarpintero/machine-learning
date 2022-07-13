@@ -1,8 +1,4 @@
-# Machine Learning Notes
-
-## Neural Network Training
-
-## Common Activation Functions
+# Activation Functions
 
 - **Sigmoid: 0 < g(z) < 1**
 
