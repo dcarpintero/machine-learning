@@ -1,7 +1,7 @@
 # BERT
 *[Summary of the Google publications about BERT listed in the references below]*
 
-[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018, aimed at addressing the problem related to the shortage of specific training data for Natural Language Processing tasks.
+[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018, aimed at addressing the problem related to the shortage of specific training data for NLP tasks.
 
 It is designed as a unified architecture to (i) pre-train [non-directional] representations from unlabeled text, and (ii) fine-tune the result - using a smaller labeled dataset - by incorporating one additional output layer. This allows to carry out a wide range of corpus-level and token-level downstream tasks, such as:
 
@@ -72,4 +72,5 @@ Task specific inputs and outputs are plugged into BERT, and the parameters are f
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
 ](https://arxiv.org/abs/1810.04805)
 - [Transformer: A Novel Neural Network Architecture for Language Understanding](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
+- [https://github.com/google-research/bert](https://github.com/google-research/bert)
 - [The Annotated Transformer](http://nlp.seas.harvard.edu/annotated-transformer/)
