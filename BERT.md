@@ -17,7 +17,7 @@ It is designed as a unified architecture to (i) pre-train [non-directional] repr
 # Architecture and Pre-Training
 
 ## Transformer
-At the core of the BERT model is a Transformer (["Attention Is All You Need"](https://arxiv.org/abs/1706.03762) and ["Transformer: A Novel Neural Network Architecture for Language Understanding"](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)), a neural network architecture based on a self-attention mechanism that weights the relationships between all words (or sub-words) in a sentence (regardless of their respective position). This allows to represent a word based on the entire context, and in particular to determine how much each of the other words should contribute to the intended word representation. 
+At the core of the BERT model is a Transformer (["Attention Is All You Need"](https://arxiv.org/abs/1706.03762) and ["Transformer: A Novel Neural Network Architecture for Language Understanding"](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)), a neural network architecture based on a self-attention mechanism that weights the relationships between all words (or sub-words) in a sentence (regardless of their respective position). This allows to represent a word based on the entire context, and in particular to determine how much each of the other words should contribute to the intended word representation.
 
 A transformer includes an encoder that reads the text input, and a decoder that produces a prediction for the task.
 
@@ -38,7 +38,7 @@ This self-attention approach results in **higher accuracy, improved computationa
 ## Input Representation
 
 To make BERT handle a variety of down-stream tasks, the input representation is able to unambiguously represent both a single sentence and a pair of sentences
-(e.g., Question, Answer) in one token sequence. The input embeddings are the sum of:
+(e.g., Question, Answer) in one token sequence. Each input is decorated with the following embeddings:
 - Token embeddings: both sentences are separated by a [CLS] token (inserted at the beginning of sentence A) and a [SEP] token (inserted at the end of sentence A);
 - Segment embeddings: every token is labeled as belonging to sentence A or sentence B; and
 - Positional embeddings: indicate the position of a token in the sentence.
