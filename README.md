@@ -4,7 +4,8 @@
   <img src="/img/dall-e-ai.png" width="200">
 </p>
 
-- [BERT (Bidirectional Encoder Representations from Transformers)](./BERT.md)
+- [BERT: Bidirectional Encoder Representations from Transformers](./BERT.md)
+- [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./ALBERT.md)
 
 
 ### Credits
