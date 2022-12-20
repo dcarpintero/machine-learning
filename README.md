@@ -1,7 +1,7 @@
 # Overview of Foundational AI Concepts and Models
 
 <p align="center">
-  <img src="/img/dall-e-ai.png">
+  <img src="/img/dall-e-ai.png" width="200">
 </p>
 
 ## - [BERT Overview](./BERT.md)
