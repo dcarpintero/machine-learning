@@ -1,9 +1,9 @@
 # BERT
 *[Summary of the Google publications about BERT listed in the references below]*
 
-[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018. It addresses the problem related to the shortage of specific training data for Natural Language Processing.
+[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018 aimed at addressing the problem related to the shortage of specific training data for Natural Language Processing.
 
-It is designed as a unified architecture to (i) pre-train [non-directional] representations from unlabeled text, and (ii) fine-tune the result - using a smaller labeled dataset - with additional output layers, in order to carry out a wide range of corpus-level and token-level downstream tasks, such as:
+It is designed as a unified architecture to (i) pre-train [non-directional] representations from unlabeled text, and (ii) fine-tune the result - using a smaller labeled dataset - by incorporating one additional output layer. This allows to carry out a wide range of corpus-level and token-level downstream tasks, such as:
 
 - Sentiment Analysis: ["Fine-grained Sentiment Classification using BERT"](https://arxiv.org/abs/1910.03474);
 - Text Classification: ["How to Fine-Tune BERT for Text Classification?"](https://arxiv.org/abs/1905.05583) and ["DocBERT: BERT for Document Classification"](https://arxiv.org/abs/1904.08398);
@@ -43,19 +43,30 @@ BERT alleviates the unidirectionality constraint present in standard conditional
 
 In particular, the Transformer encoder reads the entire sequence of words at once. In each sequence of the input, a percentage of words are randomly replaced by a mask token, and the objective is to predict the original vocabulary id of the masked words based on the context provided by the non-masked words in the sequence. 
 
-> As described by the authors, 80% of the words are replaced with a [MASK] token, 10% with a random word, and 10% use the original word.
+> As described by the authors, 80% of the words are replaced with the [MASK] token, 10% with a random word, and 10% keep the word unchanged. The advantage of this procedure is that the Transformer encoder does not know which words it will be asked to predict or which have been replaced by random words, so it is forced to keep a distributional contextual representation of every input token.
 
 ## Next Sentence Prediction Training (NSP)
 
-In order to understand the relationship between two sentences, the model further receives pairs of sentences A and B as input, and learns to predict if sentence B is connected to sentence A. 
+In order to understand the relationship between two sentences, the model further receives two spans of text from the corpus (referred as sentences A and B), and learns to predict if sentence B is connected to sentence A. 
 
 In practice, both sentences are separated by a [CLS] token (inserted at the beginning of sentence A) and a [SEP] token (inserted at the end of sentence A), whereas every token is labeled as belonging to sentence A or sentence B.
 
-> When choosing sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext).
+> When choosing sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext). In the original implementation, a GELU activation - instead of a RELU function - was used.
 
 # Fine-Tuning BERT
 
-[...]
+Fine-tuning is straightforward and relatively inexpensive since the self-attention mechanism in the Transformer allows BERT to model many downstream tasks by swapping out the appropriate inputs and outputs.
+
+Task specific inputs and outputs are plugged into BERT, and the parameters are finetuned end-to-end.
+
+> The Google Team found the following range of possible values to work well across all tasks:
+
+> • Batch size: 16, 32
+
+> • Learning rate (Adam): 5e-5, 3e-5, 2e-5
+
+> • Number of epochs: 2, 3, 4
+
 
 # References
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
