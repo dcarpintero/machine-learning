@@ -4,7 +4,7 @@
   <img src="/img/dall-e-ai.png" width="200">
 </p>
 
-## - [BERT Overview](./BERT.md)
+- [BERT (Bidirectional Encoder Representations from Transformers)](./BERT.md)
 
 
 ### Credits
