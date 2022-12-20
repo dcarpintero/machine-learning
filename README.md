@@ -1,2 +1,1 @@
-# machine-learning
-Overview of Foundational AI Concepts and Models
+# Overview of Foundational AI Concepts and Models
