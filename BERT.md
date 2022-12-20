@@ -1,7 +1,7 @@
 # BERT
 *[Summary of the Google publications about BERT listed in the references below]*
 
-[BERT (Bidirectional Encoder Representations from Transformers) is a Natural Language Representation Model developed by Google in 2018](https://arxiv.org/abs/1810.04805) that addresses the problem related to the shortage of specific training data for Natural Language Processing.
+[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018. It addresses the problem related to the shortage of specific training data for Natural Language Processing.
 
 It is designed as a unified architecture to (i) pre-train [non-directional] representations from unlabeled text, and (ii) fine-tune the result - using a smaller labeled dataset - with additional output layers, in order to carry out a wide range of corpus-level and token-level downstream tasks, such as:
 
@@ -12,7 +12,7 @@ It is designed as a unified architecture to (i) pre-train [non-directional] repr
 - Machine Translation: ["Incorporating BERT into Neural Machine Translation"](https://arxiv.org/abs/2002.06823); and
 - Text Summarization: ["Text Summarization with Pretrained Encoders"](https://arxiv.org/abs/1908.08345).
 
-> The original BERT network featured the BERT-BASE (L=12, H=768, A=12, **Total Parameters=110M**) and BERT-LARGE (L=24, H=1024, A=16, **Total Parameters=340M**) models, wherein L, H and A refer to the number of layers, hidden size and self-attention heads; respectively.
+> The original BERT implementation featured the BERT-BASE (L=12, H=768, A=12, **Total Parameters=110M**) and BERT-LARGE (L=24, H=1024, A=16, **Total Parameters=340M**) models, wherein L, H and A refer to the number of layers, hidden size and self-attention heads; respectively.
 
 # Architecture and Pre-Training
 
@@ -22,19 +22,24 @@ At the core of the BERT model is a Transformer (["Attention Is All You Need"](ht
 A transformer includes an encoder that reads the text input, and a decoder that produces a prediction for the task.
 
 ![The Transformer applied to Machine Translation](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s1600/transform20fps.gif)
+
 *The Transformer applied to Machine Translation* *(source: https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)*
 
-This self-attention approach results in **higher accuracy, improved computational performance, and better understanding of the flow of information** when compared to Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs). In particular:
+This self-attention approach results in **higher accuracy, improved computational performance, and better understanding of the flow of information** when compared to Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs):
 - RNNs struggle to fully take advantage of modern fast computing devices such as TPUs and GPUs, due to their sequential nature. 
 - CNNs are much less sequential than RNNs, but in most cases the number of steps required to combine information is correlated to the distance to the input. In contrast, the Transformer only performs a small, constant number of steps (chosen empirically).
-- Transformers allow to visualize what word(s) of a sentence the encoder attends to when computing the final representation of a word. This allows to address for example the notoriously known phenomenon of **coreference resolution** in machine translation, wherein a word might refer to a different word depending on the meaning of the antecedent(s).
+- Transformers allow to visualize what word(s) of a sentence the encoder attends to when computing the final representation of a word. This allows to address the notoriously known phenomenon of **coreference resolution** in machine translation, wherein a word might refer to a different word depending on the meaning of the antecedent(s).
 
 ![Encoder self-attention distribution for the word “it”](https://1.bp.blogspot.com/-AVGK0ApREtk/WaiAuzddKVI/AAAAAAAAB_A/WPV5ropBU-cxrcMpqJBFHg73K9NX4vywwCLcBGAs/s1600/image2.png)
+
+
 *Encoder self-attention distribution for the word “it”* *(source: https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)*
+
+
 
 ## Masked LM Training
 
-BERT alleviates the unidirectionality constraint (standard conditional language models can only be trained left-to-right or right-to-left, since bidirectional conditioning would allow each word to indirectly "see itself") by using a **masked language model (MLM)** (also referred in the literature as Cloze task) pre-training objective.
+BERT alleviates the unidirectionality constraint present in standard conditional language models (they can only be trained left-to-right or right-to-left, since bidirectional conditioning would allow each word to indirectly "see itself") by using a **masked language model (MLM)** (also referred in the literature as Cloze task) pre-training objective.
 
 In particular, the Transformer encoder reads the entire sequence of words at once. In each sequence of the input, a percentage of words are randomly replaced by a mask token, and the objective is to predict the original vocabulary id of the masked words based on the context provided by the non-masked words in the sequence. 
 
@@ -42,11 +47,11 @@ In particular, the Transformer encoder reads the entire sequence of words at onc
 
 ## Next Sentence Prediction Training (NSP)
 
-In order to understand the relationship between two sentences, the model further receives pairs of sentences A and B as input and learns to predict if sentence B is connected to sentence A. 
+In order to understand the relationship between two sentences, the model further receives pairs of sentences A and B as input, and learns to predict if sentence B is connected to sentence A. 
 
-In practice, both sentences are separated by a [CLS] token (inserted at the beginning of the first sentence) and a [SEP] token (inserted at the end of each sentence). And the model adds a learned embedding to every token indicating whether it belongs to sentence A or sentence B.
+In practice, both sentences are separated by a [CLS] token (inserted at the beginning of sentence A) and a [SEP] token (inserted at the end of sentence A), whereas every token is labeled as belonging to sentence A or sentence B.
 
-> When choosing the sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext).
+> When choosing sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext).
 
 # Fine-Tuning BERT
 
