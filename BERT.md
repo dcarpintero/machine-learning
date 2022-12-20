@@ -1,7 +1,7 @@
 # BERT
 *[Summary of the Google publications about BERT listed in the references below]*
 
-[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018 aimed at addressing the problem related to the shortage of specific training data for Natural Language Processing.
+[BERT (Bidirectional Encoder Representations from Transformers)](https://arxiv.org/abs/1810.04805) is a Natural Language Representation Model developed by Google in 2018, aimed at addressing the problem related to the shortage of specific training data for Natural Language Processing tasks.
 
 It is designed as a unified architecture to (i) pre-train [non-directional] representations from unlabeled text, and (ii) fine-tune the result - using a smaller labeled dataset - by incorporating one additional output layer. This allows to carry out a wide range of corpus-level and token-level downstream tasks, such as:
 
@@ -47,7 +47,7 @@ In particular, the Transformer encoder reads the entire sequence of words at onc
 
 ## Next Sentence Prediction Training (NSP)
 
-In order to understand the relationship between two sentences, the model further receives two spans of text from the corpus (referred as sentences A and B), and learns to predict if sentence B is connected to sentence A. 
+In order to understand the relationship between two sentences, the model further receives pairs of two spans of text from the corpus (referred as sentences A and B), and learns to predict if sentence B is connected to sentence A. 
 
 In practice, both sentences are separated by a [CLS] token (inserted at the beginning of sentence A) and a [SEP] token (inserted at the end of sentence A), whereas every token is labeled as belonging to sentence A or sentence B.
 
