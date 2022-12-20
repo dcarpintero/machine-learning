@@ -35,7 +35,13 @@ This self-attention approach results in **higher accuracy, improved computationa
 
 *Encoder self-attention distribution for the word “it”* *(source: https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)*
 
+## Input Representation
 
+To make BERT handle a variety of down-stream tasks, the input representation is able to unambiguously represent both a single sentence and a pair of sentences
+(e.g., Question, Answer) in one token sequence. The input embeddings are the sum of:
+- Token embeddings: both sentences are separated by a [CLS] token (inserted at the beginning of sentence A) and a [SEP] token (inserted at the end of sentence A);
+- Segment embeddings: every token is labeled as belonging to sentence A or sentence B; and
+- Positional embeddings: indicate the position of a token in the sentence.
 
 ## Masked LM Training
 
@@ -48,8 +54,6 @@ In particular, the Transformer encoder reads the entire sequence of words at onc
 ## Next Sentence Prediction Training (NSP)
 
 In order to understand the relationship between two sentences, the model further receives pairs of two spans of text from the corpus (referred as sentences A and B), and learns to predict if sentence B is connected to sentence A. 
-
-In practice, both sentences are separated by a [CLS] token (inserted at the beginning of sentence A) and a [SEP] token (inserted at the end of sentence A), whereas every token is labeled as belonging to sentence A or sentence B.
 
 > When choosing sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext). In the original implementation, a GELU activation - instead of a RELU function - was used.
 
@@ -71,6 +75,7 @@ Task specific inputs and outputs are plugged into BERT, and the parameters are f
 # References
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
 ](https://arxiv.org/abs/1810.04805)
-- [Transformer: A Novel Neural Network Architecture for Language Understanding](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
+- [Open Sourcing BERT: State-of-the-Art Pre-training for Natural Language Processing](https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html)
 - [https://github.com/google-research/bert](https://github.com/google-research/bert)
+- [Transformer: A Novel Neural Network Architecture for Language Understanding](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
 - [The Annotated Transformer](http://nlp.seas.harvard.edu/annotated-transformer/)
