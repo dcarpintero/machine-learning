@@ -4,7 +4,7 @@
   <img src="/img/dall-e-ai.png" width="200">
 </p>
 
-# Language Models
+# Large-Scale Language Models
 
 - [BERT: Bidirectional Encoder Representations from Transformers](./BERT.md)
 - [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./RoBERTa.md)
