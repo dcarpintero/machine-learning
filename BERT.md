@@ -51,7 +51,7 @@ During pretraining, BERT uses two objectives: **masked language modeling**, and 
 
 ## Masked Language Model (MLM)
 
-BERT alleviates the unidirectionality constraint present in standard conditional language models (they can only be trained left-to-right or right-to-left, since bidirectional conditioning would allow each word to indirectly "see itself") by using a **masked language model** (also referred in the literature as Cloze task) pre-training objective.
+BERT alleviates the unidirectionality constraint present in standard conditional language models (which can only be trained left-to-right or right-to-left, since bidirectional conditioning would allow each word to indirectly "see itself") by using a **masked language model** (also referred in the literature as *Cloze* task) pre-training objective.
 
 In particular, the Transformer encoder reads the entire sequence of words at once. In each sequence of the input, a random sample of the words are replaced with the special token [*MASK*], and the objective is to predict the original vocabulary id of the masked words based on the context provided by the non-masked words in the sequence. 
 
@@ -59,7 +59,7 @@ In particular, the Transformer encoder reads the entire sequence of words at onc
 
 ## Next Sentence Prediction (NSP)
 
-BERT performs a NSP training to improve performance on downstream tasks that require reasoning about the relationships between pairs of sentences (such as Natural Language Inference). NSP is a binary classification loss for predicting whether two sentences A and B (segments) are connected in the original text. 
+BERT performs a NSP training to improve performance on downstream tasks that require reasoning about the relationships between pairs of sentences (such as Natural Language Inference). NSP is a binary classification loss for predicting whether two sentences (segments) A and B are connected in the original text. 
 
 > When choosing sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext). In the original implementation, a [GELU](https://arxiv.org/abs/1606.08415) activation - instead of a RELU function - was used.
 
