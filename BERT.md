@@ -12,13 +12,15 @@ It is designed as a unified architecture to (i) pretrain [non-directional] repre
 - Machine Translation: ["Incorporating BERT into Neural Machine Translation"](https://arxiv.org/abs/2002.06823); and
 - Text Summarization: ["Text Summarization with Pretrained Encoders"](https://arxiv.org/abs/1908.08345).
 
-> The original BERT implementation featured the BERT-BASE (L=12, H=768, A=12, **Total Parameters=110M**) and BERT-LARGE (L=24, H=1024, A=16, **Total Parameters=340M**) models, wherein L, H and A refer to the number of layers, hidden size and self-attention heads; respectively.
+> The original BERT implementation featured the BERT-BASE (L=12, H=768, A=12, **Total Parameters=110M**) and BERT-LARGE (L=24, H=1024, A=16, **Total Parameters=340M**) models, wherein L, H and A refer to the number of layers, hidden size, and self-attention heads; respectively.
 
 # Architecture
 
 ## Input Representation
 
-To make BERT handle a variety of downstream tasks, BERT takes as input a concatenation of two segments (sequences of tokens). In practice, segments usually consist of more than one natural sentence. Each input is decorated with the following embeddings:
+BERT takes as input a concatenation of two segments (sequences of tokens). In practice, segments usually consist of more than one natural sentence. 
+
+Each input is decorated with the following embeddings:
 - Token embeddings: both segments are separated by a [CLS] token (inserted at the beginning of segment A) and a [SEP] token (inserted at the end of segment A);
 - Segment embeddings: every token is labeled as belonging to segment A or segment B; and
 - Positional embeddings: indicate the position of a token in the segment.
