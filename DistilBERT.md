@@ -12,8 +12,11 @@ As its larger counterparts it can be finetuned with good performances on a wide 
 
 # Knowledge Distillation
 
-[Knowledge distillation](https://arxiv.org/abs/1503.02531) is a compression technique in which a compact model - the student - is trained to reproduce the behaviour of a larger model - the teacher - or an ensemble of models.
+[Knowledge distillation](https://arxiv.org/abs/1503.02531) is a compression technique in which a compact model - the student - is trained to reproduce the behaviour of a larger model - the teacher - or an ensemble of models. 
 
+The input representation is simplified in DistilBERT in that, segment and positional embeddings are not present.
 
 # References
 - [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](https://arxiv.org/abs/1910.01108)
+- [DistilBERT by Huggingface](https://huggingface.co/docs/transformers/model_doc/distilbert)
+- A notebook on how to [finetune DistilBERT for text classification in TensorFlow](https://colab.research.google.com/github/peterbayerle/huggingface_notebook/blob/main/distilbert_tf.ipynb)
