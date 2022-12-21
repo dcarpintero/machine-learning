@@ -47,7 +47,7 @@ This self-attention approach results in **higher accuracy, improved computationa
 
 # Pretraining
 
-During pretraining, BERT uses two objectives: **masked language modeling**, and **next sentence prediction**. In the original implementation, BERT was trained on a 16GB combination of BOOKCORPUS and English WIKIPEDIA.
+During pretraining, BERT uses two objectives: **masked language modeling**, and **next sentence prediction**. In the original implementation, BERT was pretrained on a 16GB combination of BOOKCORPUS and English WIKIPEDIA.
 
 ## Masked Language Model (MLM)
 
