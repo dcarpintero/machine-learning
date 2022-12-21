@@ -7,8 +7,8 @@
 # Language Models
 
 - [BERT: Bidirectional Encoder Representations from Transformers](./BERT.md)
-- [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./ALBERT.md)
 - [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./RoBERTa.md)
+- [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./ALBERT.md)
 - [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](./DistilBERT.md)
 - [GPT-3](./GPT-3.md)
 
