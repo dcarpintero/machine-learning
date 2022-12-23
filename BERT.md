@@ -37,8 +37,8 @@ A transformer includes an encoder that reads the text input, and a decoder that 
 
 This self-attention approach results in **higher accuracy, improved computational performance, and better understanding of the flow of information** when compared to Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs):
 - RNNs struggle to fully take advantage of modern fast computing devices such as TPUs and GPUs, due to their sequential nature. 
-- CNNs are much less sequential than RNNs, but in most cases the number of steps required to combine information is correlated to the distance to the input. In contrast, the Transformer only performs a small, constant number of steps (chosen empirically).
-- Transformers allow to visualize what word(s) of a sentence the encoder attends to when computing the final representation of a word. This allows to address the notoriously known phenomenon of **coreference resolution** in machine translation, wherein a word might refer to a different word depending on the meaning of the antecedent(s).
+- CNNs are much less sequential than RNNs, but in most cases the number of steps required to combine information is correlated to the distance to the input. In contrast, the Transformer only performs a small, constant number of steps.
+- Transformers allow to visualize what word(s) of a sentence the encoder attends to, when computing the final representation of a word. This allows to address the notoriously known phenomenon of **coreference resolution** in machine translation, wherein a word might refer to a different word depending on the meaning of the antecedent(s).
 
 ![Encoder self-attention distribution for the word “it”](https://1.bp.blogspot.com/-AVGK0ApREtk/WaiAuzddKVI/AAAAAAAAB_A/WPV5ropBU-cxrcMpqJBFHg73K9NX4vywwCLcBGAs/s1600/image2.png)
 
