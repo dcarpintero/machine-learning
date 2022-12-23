@@ -1,11 +1,12 @@
-# The Transformer: Attention is All You Need
+# Transformer: The Building Block for NLP Models
 *[Summary of the Transformer publications listed in the references below]*
 
 The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was proposed by Google in 2017, and has been widely used in Natural Language Processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
 
-The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence.
+The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to weigh the importance of different input words (tokens) and contextualize them in relation to one another (irrespectively of their position). 
 
-This approach results in **higher accuracy, improved computational performance, and better understanding of the flow of information** when compared to Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs):
+This approach results in **higher accuracy, improved computational performance, and better understanding of the flow of information** when compared to Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs), which process input sequentially and do not have a way to explicitly consider the relationships between words. In particular:
+
 - RNNs struggle to fully take advantage of modern fast computing devices such as TPUs and GPUs, due to their sequential nature. 
 - CNNs are much less sequential than RNNs, but in most cases the number of steps required to combine information is correlated to the distance to the input (linearly for ConvS2S and logarithmically for ByteNet), which makes it more difficult to learn dependencies between distant positions.  
 
@@ -20,19 +21,20 @@ The Transformer follows a stacked encoder-decoder architecture using Multi-Head 
   <img src="img/the-encoder-architecture.png" width="400">
 </p>
 
-<p align="center">The Transformer Architecture - source: https://arxiv.org/pdf/1706.03762.pdf</p>
+<p align="center">The Transformer Architecture (source: https://arxiv.org/pdf/1706.03762.pdf)</p>
 
 ## Encoder
 
 The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers). 
 
-The first sublayer is a **multi-head self-attention** to attend to different positions in the input sequence and compute a weighted sum of the hidden states at those positions. 
+The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing 
+the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously.
 
-The second sublayer is a **feedforward neural network** that processes the output of the self-attention sublayer. In practice it consists of multiple hidden units and applies a non-linear activation function to the inputs.
+The second sublayer is a **feedforward neural network** that processes the output of the self-attention sublayer. In practice, it consists of multiple hidden units and applies a non-linear activation function to the inputs.
 
 ## Decoder
 
-The decoder is also composed of a stack of N = 6 identical layers (with different weights). In addition to the two sub-layers present in the encoder layers, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
+The decoder is also composed of a stack of N = 6 identical layers (with different weights though). In addition to the two sub-layers present in the encoder layers, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
 
 The self-attention sub-layer in the decoder stack prevents positions from attending to subsequent positions. This masking, combined with the offset by one position of the output embeddings, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 
@@ -48,9 +50,7 @@ This process can be described as follows:
 
 1. The input sequence is passed through an embedding layer, which maps the input tokens to a high-dimensional space. In practice it is implemented as a lookup table that maps each input token to a 512 size embedding vector.
 
-    This allows the model to (i) handle words that are not present in the training data (out-of-vocabulary words) by mapping them to a special "unknown" embedding vector, and (ii) incorporate additional information about the input tokens, such as their part-of-speech or syntactic role.
-
-2. Positional encoding is used instead of convolutional layers or recurrent mechanism (which process the input word by word in a sequencial manner) to record the relative or absolute position information of the tokens in the sequence.
+2. Positional encoding is used to record the relative or absolute position information of the tokens in the sequence (convolutional and recurrent architectures infer the position of the tokens by processing the input word by word in a sequencial manner).
 
 3. The query, key, and value representations are used to compute the attention weights using a dot-product (of the query vector with the key vector of the respective word) followed by a normalization step.
 
