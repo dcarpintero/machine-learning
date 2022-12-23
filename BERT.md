@@ -29,8 +29,6 @@ Each input is decorated with the following embeddings:
 
 At the core of the BERT model is a Transformer (["Attention Is All You Need"](https://arxiv.org/abs/1706.03762) and ["Transformer: A Novel Neural Network Architecture for Language Understanding"](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)), a neural network architecture based on a self-attention mechanism that weights the relationships between all words (or sub-words) in a sentence (regardless of their respective position). This allows to represent a word based on the entire context, and in particular to determine how much each of the other words should contribute to the intended word representation.
 
-A transformer includes an encoder that reads the text input, and a decoder that produces a prediction for the task.
-
 ![The Transformer applied to Machine Translation](https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s1600/transform20fps.gif)
 
 *The Transformer applied to Machine Translation* *(source: https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)*
