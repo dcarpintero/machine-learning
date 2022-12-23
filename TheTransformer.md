@@ -1,7 +1,7 @@
 # The Transformer: Attention is All You Need
 *[Summary of the Transformer publications listed in the references below]*
 
-The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was introduced by Google in 2017, and has been widely used in natural language processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
+The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was proposed by Google in 2017, and has been widely used in natural language processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
 
 The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence.
 
@@ -48,13 +48,13 @@ The **self-attention** mechanism allows the model to directly consider the relat
 
 The self-attention process can be described as follows:
 
-1. The input sequence is passed through an embedding layer, which maps the input tokens to a high-dimensional space. In practice it is implemented as a lookup table that maps each input token to a fixed-size embedding vector
+1. The input sequence is passed through an embedding layer, which maps the input tokens to a high-dimensional space. In practice it is implemented as a lookup table that maps each input token to a 512 size embedding vector.
 
     This allows the model to (i) handle words that are not present in the training data (out-of-vocabulary words) by mapping them to a special "unknown" embedding vector, and (ii) incorporate additional information about the input tokens, such as their part-of-speech or syntactic role.
 
 2. Positional encoding is used instead of convolutional layers or recurrent mechanism (which process the input word by word in a sequencial manner) to record the relative or absolute position information of the tokens in the sequence.
 
-3. The query, key, and value representations are used to compute the attention weights using a dot-product followed by a normalization step.
+3. The query, key, and value representations are used to compute the attention weights using a dot-product (of the query vector with the key vector of the respective word) followed by a normalization step.
 
 4. The attention weights are used to compute a weighted sum of the value representations, which is input to the feedforward neural network.
 
