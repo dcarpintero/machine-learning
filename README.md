@@ -6,6 +6,7 @@
 
 # Large-Scale Language Models
 
+- [The Transformer: Attention is All You Need](./TheTransformer.md)
 - [BERT: Bidirectional Encoder Representations from Transformers](./BERT.md)
 - [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./RoBERTa.md)
 - [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./ALBERT.md)
