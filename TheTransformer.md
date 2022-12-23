@@ -17,7 +17,7 @@ This approach results in **higher accuracy, improved computational performance, 
 The Transformer follows an encoder-decoder architecture using stacked self-attention, and feedforward neural network layers.
 
 <p align="center">
-  <img src="/img/the-encoder-architecture" width="200">
+  <img src="img/the-encoder-architecture.png" width="400">
 </p>
 
 *[The Transformer Architecture - source: https://arxiv.org/pdf/1706.03762.pdf]*
