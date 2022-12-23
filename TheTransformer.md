@@ -1,7 +1,7 @@
 # The Transformer: Attention is All You Need
 *[Summary of the Transformer publications listed in the references below]*
 
-The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was proposed by Google in 2017, and has been widely used in natural language processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
+The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was proposed by Google in 2017, and has been widely used in Natural Language Processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
 
 The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence.
 
