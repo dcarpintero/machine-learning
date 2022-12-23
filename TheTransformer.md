@@ -1,7 +1,7 @@
 # The Transformer: Attention is All You Need
 *[Summary of the Transformer publications listed in the references below]*
 
-The Transformer is an encoder-decoder architecture aimed at reducing sequential computation. It was introduced by Google in 2017, and has been widely used in natural language processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
+The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was introduced by Google in 2017, and has been widely used in natural language processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
 
 The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence.
 
@@ -14,37 +14,56 @@ This approach results in **higher accuracy, improved computational performance, 
 
 # Model Architecture
 
-The Transformer follows an encoder-decoder architecture using stacked self-attention, and feedforward neural network layers.
+The Transformer follows a stacked encoder-decoder architecture using Multi-Head Self-Attention Mechanism, and Position-Encoding and Position-Wise Feed Forward Neural Networks.
 
 <p align="center">
   <img src="img/the-encoder-architecture.png" width="400">
 </p>
 
-*[The Transformer Architecture - source: https://arxiv.org/pdf/1706.03762.pdf]*
+<p align="center">The Transformer Architecture - source: https://arxiv.org/pdf/1706.03762.pdf</p>
 
 ## Encoder
 
 The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers). 
 
-The first sublayer is a **multi-head self-attention** mechanism that allowss the encoder to attend to different positions in the input sequence and compute a weighted sum of the hidden states at those positions. 
+The first sublayer is a **multi-head self-attention** mechanism that enables the encoder to attend to different positions in the input sequence and compute a weighted sum of the hidden states at those positions. 
 
-The second sublayer, a **feedforward neural network**, is a standard fully-connected neural network that processes the output of the self-attention sublayer. In practice it consists of multiple hidden units and applies a non-linear activation function to the inputs.
+The second sublayer, a **feedforward neural network**, is a standard fully-connected NN that processes the output of the self-attention sublayer. In practice it consists of multiple hidden units and applies a non-linear activation function to the inputs.
 
 ## Decoder
 
 The decoder is also composed of a stack of N = 6 identical layers. 
 
-In addition to the two sub-layers in each encoder layer, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack** (allowing the decoder to attend to the hidden states produced by the encoder). Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
+In addition to the two sub-layers in each encoder layer, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
 
 The self-attention sub-layer in the decoder stack prevents positions from attending to subsequent positions. This masking, combined with the offset by one position of the output embeddings, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 
 ## Self-Attention Mechanism
 
-An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors. The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key.
+An attention function can be described as mapping a query and a set of key-value pairs to an output, wherein the query, keys, values, and output are all vectors. The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key.
 
-The self-attention mechanism allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence, rather than relying on a fixed-length context window or recurrence. This enables the Transformer to process input sequences of arbitrary length and results in a more effective handling of long-range dependencies.
+There are two types of attention mechanisms used in the Transformer architecture: **self-attention** and **encoder-decoder attention**.
+
+The **self-attention** mechanism allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence, rather than relying on a fixed-length context window or recurrence. This enables the Transformer to **process input sequences of arbitrary length** and **results in a more effective handling of long-range dependencies**.
+
+The self-attention process can be described as follows:
+
+1. The input sequence is passed through an embedding layer, which maps the input tokens to a high-dimensional space. In practice it is implemented as a lookup table that maps each input token to a fixed-size embedding vector
+
+    This allows the model to (i) handle words that are not present in the training data (out-of-vocabulary words) by mapping them to a special "unknown" embedding vector, and (ii) incorporate additional information about the input tokens, such as their part-of-speech or syntactic role.
+
+2. Positional encoding is used instead of convolutional layers or recurrent mechanism (which process the input word by word in a sequencial manner) to record the relative or absolute position information of the tokens in the sequence.
+
+3. The query, key, and value representations are used to compute the attention weights using a dot-product followed by a normalization step.
+
+4. The attention weights are used to compute a weighted sum of the value representations, which is input to the feedforward neural network.
+
+The **encoder-decoder attention** is used in the decoder layer to attend to the hidden states produced by the encoder (from where the keys and values are coming).
+
+
 
 # References
 - [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
 - [Transformer: A Novel Neural Network Architecture for Language Understanding](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
 - [The Annotated Transformer](http://nlp.seas.harvard.edu/annotated-transformer/)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
