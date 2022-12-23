@@ -26,15 +26,13 @@ The Transformer follows a stacked encoder-decoder architecture using Multi-Head 
 
 The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers). 
 
-The first sublayer is a **multi-head self-attention** mechanism that enables the encoder to attend to different positions in the input sequence and compute a weighted sum of the hidden states at those positions. 
+The first sublayer is a **multi-head self-attention** to attend to different positions in the input sequence and compute a weighted sum of the hidden states at those positions. 
 
-The second sublayer, a **feedforward neural network**, is a standard fully-connected NN that processes the output of the self-attention sublayer. In practice it consists of multiple hidden units and applies a non-linear activation function to the inputs.
+The second sublayer is a **feedforward neural network** that processes the output of the self-attention sublayer. In practice it consists of multiple hidden units and applies a non-linear activation function to the inputs.
 
 ## Decoder
 
-The decoder is also composed of a stack of N = 6 identical layers. 
-
-In addition to the two sub-layers in each encoder layer, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
+The decoder is also composed of a stack of N = 6 identical layers (with different weights). In addition to the two sub-layers present in the encoder layers, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
 
 The self-attention sub-layer in the decoder stack prevents positions from attending to subsequent positions. This masking, combined with the offset by one position of the output embeddings, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 
@@ -46,7 +44,7 @@ There are two types of attention mechanisms used in the Transformer architecture
 
 The **self-attention** mechanism allows the model to directly consider the relationships between input words (or tokens) at different positions in the input sequence, rather than relying on a fixed-length context window or recurrence. This enables the Transformer to **process input sequences of arbitrary length** and **results in a more effective handling of long-range dependencies**.
 
-The self-attention process can be described as follows:
+This process can be described as follows:
 
 1. The input sequence is passed through an embedding layer, which maps the input tokens to a high-dimensional space. In practice it is implemented as a lookup table that maps each input token to a 512 size embedding vector.
 
