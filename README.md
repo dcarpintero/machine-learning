@@ -13,6 +13,10 @@
 - [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](./DistilBERT.md)
 - [GPT-3](./GPT-3.md)
 
+# Generative-AI
+
+- [Diffusion Models](./Diffusion-Models.md)
+
 
 # Credits
 
