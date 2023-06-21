@@ -1,12 +1,14 @@
 # Diffusion Models
 
-[Diffusion models](), originally proposed in 2015, are becoming the leading deep generative models in image, audio and video synthesis due to their training stability and sample quality results. Generative models are a class of machine learning models that can generate new data based on training data. Other generative models include Generative adversarial networks (GANs), Variational Autoencoders (VAEs), and Flow-based models. Each can produce high-quality images, but they all have limitations that make them inferior to diffusion models.
+Diffusion models, originally proposed in 2015, have emerged as the leading deep generative models for image, audio, and video synthesis due to their training stability and high-quality sample generation. While other generative models like *Generative Adversarial Networks (GANs)*, *Variational Autoencoders (VAEs)*, and *Flow-based* models can also produce high-quality images, diffusion models have demonstrated superior performance and overcome certain limitations.
 
-In practice, diffusion models work by (i) gradually adding Gaussian noise levels to the training data, until said data transforms into pure noise; and (ii) learning to invert this process (i.e. to remove the added noise). The model can then apply this learnt denoising process to random seeds sampled from a normal distribution for synthesizing samples that exhibit realistic characteristics. 
+In practice, diffusion models operate by gradually adding Gaussian noise to the training data until the data transforms into pure noise. The model then learns to reverse this process, effectively removing the added noise. By applying this learned denoising process to random seeds sampled from a normal distribution, diffusion models generate samples with realistic characteristics.
 
-This noising process is inspired by diffusion in physics.
+This diffusion process is inspired by the concept of diffusion in physics, wherein particles spread and disperse from an area of high concentration to areas of lower concentration through random motion. Similarly, in diffusion models, the gradual introduction of noise can be regarded as a diffusion-like process, where the noise "spreads" and interacts with the data, gradually transforming it. The iterative steps in the diffusion model mimic the progression of time in a diffusion process, with each step representing a moment of diffusion and information exchange.
 
-The Neural Network
+# Process
+
+Sampling
 
 Training
 
@@ -20,5 +22,6 @@ Summary
 
 - [Dall-E 2](https://openai.com/dall-e-2): DALL·E 2 is an AI system that can create realistic images and art from a description in natural language. It uses a diffusion prior on CLIP latents, and cascaded diffusion models to generate high resolution 1024×1024 images. 
 - [Imagen](https://imagen.research.google/):  Imagen consists of multiple diffusion models, which start by generating a small image and progressively increase its resolution. It leverages large transformer language models pretrained on text-only corpora, and does not require to learn from a latent prior. 
-- [Stable Diffusion](https://stability.ai/)
-- [Midjourney]()
+- [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752/): Stable Diffusion was trained on an open dataset, using the 2 billion English label subset of the CLIP-filtered image-text pairs open dataset LAION 5b, a general crawl of the internet created by the German charity LAION.
+- [Midjourney](https://www.midjourney.com/)
+- [Meta AI](https://ai.facebook.com/blog/greater-creative-control-for-ai-image-generation/)
