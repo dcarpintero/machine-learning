@@ -1,6 +1,6 @@
 # Diffusion Models
 
-Diffusion models, originally proposed in 2015, have emerged as the leading deep generative models for image, audio, and video synthesis due to their training stability and high-quality sample generation. While other generative models like *Generative Adversarial Networks (GANs)*, *Variational Autoencoders (VAEs)*, and *Flow-based* models can also produce high-quality images, diffusion models have demonstrated superior performance in their abilities towards training convergence (stability), fine control over noise levels, invertible process and flexibility across domains. 
+[Diffusion models](https://arxiv.org/abs/1503.03585), originally proposed in 2015, have emerged as the leading deep generative models for image, audio, and video synthesis due to their training stability and high-quality sample generation. While other generative models like *Generative Adversarial Networks (GANs)*, *Variational Autoencoders (VAEs)*, and *Flow-based* models can also produce high-quality images, diffusion models have demonstrated superior performance in their abilities towards training convergence (stability), fine control over noise levels, invertible process and flexibility across domains. 
 
 In practice, diffusion models operate by gradually adding Gaussian noise to the training data until the data transforms into pure noise. The model then learns to reverse this process by computing the loss between the predicted and effective noise. By applying this learned denoising process to random seeds sampled from a normal distribution, diffusion models can generate samples with realistic characteristics.
 
@@ -8,7 +8,7 @@ This process is inspired by the concept of diffusion in physics, wherein particl
 
 ## Network Architecture
 
-Typically, a U-Net network architecture is commonly used in diffusion models as a part of the encoder and decoder components:
+U-Net network architectures, which allow the preservation of dimensions, are commonly used in diffusion models as a part of the encoder and decoder components:
 
 - The encoder takes the input data, such as an image, and progressively downsamples it into an embedding by applying convolutional layers. 
 - After encoding the input data, the diffusion steps are applied to gradually introduce noise. 
