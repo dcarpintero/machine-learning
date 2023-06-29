@@ -1,13 +1,13 @@
 # Transformer: The Building Block for NLP Models
 *[Summary of the Transformer publications listed in the references below]*
 
-The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was proposed by Google in 2017, and has been widely used in Natural Language Processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
+The Transformer is an encoder-decoder architecture aimed at reducing sequential computation (to speed-up the training time). It was introduced by Google and the University of Toronto in 2017, and has been widely used in Natural Language Processing tasks such as machine translation, reading comprehension, abstractive summarization, and text classification.
 
-The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to weigh the importance of different input words (tokens) and contextualize them in relation to one another (irrespectively of their position). 
+The core contribution of the Transformer is the use a **self-attention mechanism**, which allows the model to learn the relevance and context of all words (tokens) in an input, not just the neighboring words. It achieves this through attention weights (learned during the training phase) that determine the importance of each word to one another (irrespectively of their position). 
 
 This approach results in **higher accuracy, improved computational performance, and better understanding of the flow of information** when compared to Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs), which process input sequentially and do not have a way to explicitly consider the relationships between words. In particular:
 
-- RNNs struggle to fully take advantage of modern fast computing devices such as TPUs and GPUs, due to their sequential nature. 
+- RNNs struggle to fully take advantage of modern fast computing devices such as TPUs and GPUs, due to their sequential nature. This limits RNNs by the amount of computation and memory needed, which increases exponentially with the window of text that the model sees.
 - CNNs are much less sequential than RNNs, but in most cases the number of steps required to combine information is correlated to the distance to the input (linearly for ConvS2S and logarithmically for ByteNet), which makes it more difficult to learn dependencies between distant positions.  
 
     In contrast, the Transformer only performs a small, constant number of steps (chosen empirically), albeit at the cost of reduced effective resolution due to averaging attention-weighted positions. An effect that is addressed with Multi-Head Attention.
@@ -23,14 +23,17 @@ The Transformer follows a stacked encoder-decoder architecture using Multi-Head 
 
 <p align="center">The Transformer Architecture (source: https://arxiv.org/pdf/1706.03762.pdf)</p>
 
+## Embedding Layer
+
+Before processing text, words are tokenized and converted into numerical representations named tokens. These tokens are then passed through an embedding layer, a trainable vector embedding space, that assigns vectors to each token, encoding their meaning and context. Positional encoding is added to preserve word order information since the model processes each input token in parallel. 
+
 ## Encoder
 
 The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers). 
 
-The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing 
-the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously.
+The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously. This enables the model to capture contextual dependencies.
 
-The second sublayer is a **feedforward neural network** that processes the output of the self-attention sublayer. In practice, it consists of multiple hidden units and applies a non-linear activation function to the inputs.
+The output is then passed through a **feedforward neural network** and a **softmax layer** to obtain probability scores for each token in the vocabulary. The highest-scoring token is the most likely predicted token, although different selection methods can be employed.
 
 ## Decoder
 
