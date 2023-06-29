@@ -10,7 +10,7 @@ This approach results in **higher accuracy, improved computational performance, 
 - RNNs struggle to fully take advantage of modern fast computing devices such as TPUs and GPUs, due to their sequential nature. This limits RNNs by the amount of computation and memory needed, which increases exponentially with the window of text that the model sees.
 - CNNs are much less sequential than RNNs, but in most cases the number of steps required to combine information is correlated to the distance to the input (linearly for ConvS2S and logarithmically for ByteNet), which makes it more difficult to learn dependencies between distant positions.  
 
-    In contrast, the Transformer only performs a small, constant number of steps (chosen empirically), albeit at the cost of reduced effective resolution due to averaging attention-weighted positions. An effect that is addressed with Multi-Head Attention.
+  In contrast, the Transformer only performs a small, constant number of steps (chosen empirically), albeit at the cost of reduced effective resolution due to averaging attention-weighted positions. An effect that is addressed with Multi-Head Attention.
 - Transformers allow to visualize what word(s) of a sentence the encoder attends to, when computing the final representation of a word. This allows to address the notoriously known phenomenon of **coreference resolution** in machine translation, wherein a word might refer to a different word depending on the meaning of the antecedent(s).
 
 # Model Architecture
@@ -31,9 +31,9 @@ Before processing text, words are tokenized and converted into numerical represe
 
 The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers). 
 
-The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously. This enables the model to capture contextual dependencies.
+The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously. In practice, it is intended that each attention head learns (by itself) a different aspect of the language by capturing a contextual dependency. While the number of attention heads included in the attention layer varies from model to model, it is typically in the range of 12-100.
 
-The output is then passed through a **feedforward neural network** and a **softmax layer** to obtain probability scores for each token in the vocabulary. The highest-scoring token is the most likely predicted token, although different selection methods can be employed.
+The output is then passed through a **feedforward neural network** and a **softmax layer** where it is normalized to obtain probability scores for each token in the vocabulary. The highest-scoring token is the most likely predicted token, although different selection methods can be employed.
 
 ## Decoder
 
@@ -61,7 +61,21 @@ This process can be described as follows:
 
 The **encoder-decoder attention** is used in the decoder layer to attend to the hidden states produced by the encoder (from where the keys and values are coming).
 
+## Which contextual dependencies or aspects of the language are typically learned by the multi-head self-attention layer?
 
+The specific dependencies and aspects learned are not predetermined but are discovered through training, this includes typically:
+
+- Syntactic relationships: e.g. subject-verb or noun-adjective relationships, which helps the model understand the grammatical structure of sentences.
+
+- Semantic relationships: understand the meaning and associations between different terms.
+
+- Coreference resolution: learn to associate pronouns with their corresponding antecedents, allowing it to correctly interpret sentences with references to previously mentioned entities.
+
+- Word order and sentence structure: allowing the model to capture the order and hierarchy of phrases and clauses.
+
+- Long-range dependencies: capture dependencies between distant words in a sentence.
+
+- Contextual nuances: such as sarcasm, irony, or sentiment, by attending to specific words or phrases that carry such meaning.
 
 # References
 - [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
