@@ -12,10 +12,16 @@ FLAN fine-tunes the model on a large set of varied instructions that use a simpl
 
 ## Parameter Efficient Fine-Tuning (PEFT)
 
-Another option is the use of parameter efficient fine-tuning (PEFT), a set of techniques that preserves the weights of the original LLM and trains only a small number of task-specific adapter layers and parameters.
+PEFT offers two main advantages over full fine-tuning. Firstly, by keeping most, if not all, of the LLM weights frozen, the number of trained parameters is much smaller than in the original model, making memory management more feasible. Secondly, PEFT is less prone to catastrophic forgetting. Instead of creating separate versions of the model for each task, PEFT combines the PEFT weights with the original LLM weights during inference, enabling efficient adaptation to multiple tasks. There are different approaches within PEFT, including selective methods, reparameterization methods, and additive methods, each with their own trade-offs in terms of parameter efficiency, memory efficiency, training speed, model quality, and inference costs.
+
+### LoRA
+
+### Soft-Prompts
 
 ## References
 
 - [Finetuned Language Models are Zero-Shot-Learners](https://arxiv.org/pdf/2109.01652.pdf)
 - [Introducing FLAN: More generalizable Language Models with Instruction Fine-Tuning](https://ai.googleblog.com/2021/10/introducing-flan-more-generalizable.html)
 - [Scaling Instruction-Finetuned Language Models, Chung et al. 2022](https://arxiv.org/abs/2210.11416)
+- [The FLAN Collection](https://github.com/google-research/FLAN/tree/main/flan/v2)
+- [Templates/Prompts](https://github.com/google-research/FLAN/blob/main/flan/v2/templates.py)
