@@ -17,6 +17,10 @@
 
 - [Diffusion Models](./Diffusion-Models.md)
 
+# Training
+
+- [Fine-Tuning](./FineTuning.md)
+
 
 # Credits
 
