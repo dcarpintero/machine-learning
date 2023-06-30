@@ -14,7 +14,7 @@ This approach results in **higher accuracy, improved computational performance, 
 
 # Model Architecture
 
-The Transformer follows a stacked encoder-decoder architecture using Multi-Head Self-Attention Mechanism, and Position-Encoding and Position-Wise Feed Forward Neural Networks.
+The Transformer follows a stacked encoder-decoder architecture using: Multi-Head Self-Attention Mechanism, and Position-Encoding and Position-Wise Feed Forward Neural Networks.
 
 <p align="center">
   <img src="img/the-encoder-architecture.png" width="400">
