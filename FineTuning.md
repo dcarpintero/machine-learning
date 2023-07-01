@@ -75,9 +75,20 @@ To address reward hacking, KL divergence (Kullback-Leibler divergence) is used. 
 - [Templates/Prompts](https://github.com/google-research/FLAN/blob/main/flan/v2/templates.py)
 
 ### RLHF
-- [Proximal Policy Optimization](https://openai.com/research/openai-baselines-ppo)
-- [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
+- [Training language models to follow instructions with human feedback](https://arxiv.org/abs/2203.02155)
+- [Learning to summarize from human feedback](https://arxiv.org/abs/2009.01325)
 - [Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU](https://huggingface.co/blog/trl-peft)
+- [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
+
+### Proximal Policy Optimization (PPO)
+- [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347v1)
+- [Proximal Policy Optimization](https://openai.com/research/openai-baselines-ppo)
+- [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290)
+
+### RAG
+- [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
+- [PAL: Program-aided Language Models](https://arxiv.org/abs/2211.10435)
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
 
 ### Constitutional AI
 - [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073)
