@@ -2,7 +2,7 @@
 
 # Fine-Tuning
 
-Fine-tuning is a supervised learning process designed to enhance the performance and adaptability of a pre-trained language model (LLM) for a downstream task. It involves updating the model's weights using a dataset that contains specific task-specific labeled examples, known as prompt-completion pairs.
+Fine-tuning is a supervised learning process designed to enhance the performance and adaptability of a pre-trained language model (LLM) for a downstream task. It involves updating the model's weights using a dataset that contains task-specific labeled examples, known as prompt-completion pairs.
 
 In practice, it is feasible to fine-tune a LLM model for a single task, even with a relatively small number of examples (approximately 500-1000). However, this approach can lead to the model forgetting its previously learned tasks (catastrophic forgetting), which can be addressed with multitask fine-tuning, and parameter efficient fine-tuning (PEFT).
 
@@ -75,7 +75,9 @@ To address reward hacking, KL divergence (Kullback-Leibler divergence) is used. 
 - [Templates/Prompts](https://github.com/google-research/FLAN/blob/main/flan/v2/templates.py)
 
 ### RLHF
-- [Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU]()https://huggingface.co/blog/trl-peft
+- [Proximal Policy Optimization](https://openai.com/research/openai-baselines-ppo)
+- [Deep Reinforcement Learning: Pong from Pixels](http://karpathy.github.io/2016/05/31/rl/)
+- [Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU](https://huggingface.co/blog/trl-peft)
 
 ### Constitutional AI
 - [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073)
