@@ -4,12 +4,8 @@
 
 - The RL process is a loop that outputs a sequence of **state**, **action** (discrete or continuous), **reward** and **next state**.
 
-- To solve an RL problem, it is needed to find optimal policy, which determines the actions (given a state) that maximize the expected return.
-
-## The Policy π: the agent’s brain
-
-The Policy π is the brain of the agent, it’s the function that defines the agent's behavior by determining what action to take given a state.
+- To solve an RL problem, it is needed to find optimal policy, which determines the actions (given a state) that maximize the expected return. The Policy π is the function that defines the agent's behavior by determining what action to take given a state.
 
 There are two approaches to train an agent to find its optimal policy π:
-- Directly, train the policy directly: **Policy-Based Methods**.
-- Indirectly, teach the agent to learn which state is more valuable and then take the action that leads to the more valuable states: **Value-Based Methods**.
+- Directly: **Policy-Based Methods**.
+- Indirectly: **Value-Based Methods**.
