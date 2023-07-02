@@ -28,7 +28,7 @@ Before processing text, words are tokenized and converted into numerical represe
 
 ## Encoder
 
-The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers). 
+The encoder processes the input sequence and produces a sequence of hidden states. It is composed of a stack of N = 6 identical layers (each comprising two sub-layers) aimed at acquiring understanding from the input. 
 
 The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously. In practice, it is intended that each attention head learns (by itself) a different aspect of the language by capturing a contextual dependency. While the number of attention heads included in the attention layer varies from model to model, it is typically in the range of 12-100.
 
@@ -36,7 +36,7 @@ The output is then passed through a **feedforward neural network** and a **softm
 
 ## Decoder
 
-The decoder is also composed of a stack of N = 6 identical layers (with different weights though). In addition to the two sub-layers present in the encoder layers, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
+The decoder is also composed of a stack of N = 6 identical layers (with different weights though) aimed at generating output. In addition to the two sub-layers present in the encoder layers, it inserts a third sub-layer, which performs **multi-head attention over the output of the encoder stack**. Similar to the encoder, the decoder employs residual connections around each of the sub-layers, followed by layer normalization.
 
 The self-attention sub-layer in the decoder stack prevents positions from attending to subsequent positions. This masking, combined with the offset by one position of the output embeddings, ensures that the predictions for position ii can depend only on the known outputs at positions less than ii.
 
@@ -79,9 +79,15 @@ The specific dependencies and aspects learned are not predetermined but are disc
 # Categories
 
 Transformers can be grouped into three categories:
-  GPT-like (also called auto-regressive Transformer models)
-  BERT-like (also called auto-encoding Transformer models)
-  BART/T5-like (also called sequence-to-sequence Transformer models)
+- BERT-like (also called auto-encoding Transformer models)
+  - Examples: ALBERT, BERT, DistilBERT, ELECTRA, RoBERTa
+  - Tasks: Sentence Classification, Named Entity Recognition, Extractive Question Answering
+- GPT-like (also called auto-regressive Transformer models)
+  - Examples: CTRL, GPT, GPT-2, Transformer XL
+  - Text Generation
+- BART/T5-like (also called sequence-to-sequence Transformer models)
+  - Examples: BART, T5, Marian, mBART
+  - Tasks: Summarization, translation, generative question answering
 
 # References
 - [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
