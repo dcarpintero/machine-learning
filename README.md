@@ -16,10 +16,12 @@
 # Generative-AI
 
 - [Diffusion Models](./Diffusion-Models.md)
-
-# Training
-
 - [Fine-Tuning](./FineTuning.md)
+
+# Deep Reinforcement Learning
+
+- [Introduction](./reinforcement-learning/introduction.md)
+
 
 
 # Credits
