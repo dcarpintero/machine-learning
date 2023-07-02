@@ -76,6 +76,13 @@ The specific dependencies and aspects learned are not predetermined but are disc
 
 - Contextual nuances: such as sarcasm, irony, or sentiment, by attending to specific words or phrases that carry such meaning.
 
+# Categories
+
+Transformers can be grouped into three categories:
+  GPT-like (also called auto-regressive Transformer models)
+  BERT-like (also called auto-encoding Transformer models)
+  BART/T5-like (also called sequence-to-sequence Transformer models)
+
 # References
 - [Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
 - [Transformer: A Novel Neural Network Architecture for Language Understanding](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
