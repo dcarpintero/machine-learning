@@ -1,10 +1,10 @@
-# Overview of Foundational AI Concepts and Models
+# Foundational AI Concepts and Models
 
 <p align="center">
   <img src="/img/dall-e-ai.png" width="200">
 </p>
 
-# Large-Scale Language Models
+# Large Language Models (LLMs)
 
 - [Transformer: The Building Block for NLP Models](./Transformer.md)
 - [BERT: Bidirectional Encoder Representations from Transformers](./BERT.md)
