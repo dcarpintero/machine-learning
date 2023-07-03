@@ -6,6 +6,16 @@
 
 - The RL process is a loop that outputs a sequence of **state**, **action** (discrete or continuous), **reward** and **next state**.
 
-- The agents decision-making process is called the policy π, and to solve an RL problem, it is needed to find an Optimal Policy π, which determines the actions (given a state) that maximize the expected return. There are two approaches to train an agent to find its optimal policy π:
-    - Directly, map from each state to the best corresponding action at that state: **Policy-Based Methods**.
-    - Indirectly, train a value function that maps a state to the expected value of being at that state.: **Value-Based Methods**.
+- The agents decision-making process is called the policy π. To solve an RL problem, it is needed to find an Optimal Policy π, which determines the actions (given a state or observation of the environment) that maximize the expected return. There are two approaches to train an agent to find its optimal policy π:
+    - **Policy-Based Methods**: Train the policy directly to learn which action to take given a state.
+    - **Value-Based Methods**: Train a value function to learn which state is more valuable and use this value function to take the action that leads to it. In other words, finding an optimal value function (denoted Q* or V*) leads to having an optimal policy.
+    
+    Types of value-based functions:
+
+        - State-Value: outputs the expected return if the agent starts at a given state and acts according to the policy forever after.
+        - Action-Value: outputs the expected return if the agent starts in a given state, takes a given action at that state and then acts accordingly to the policy forever after.
+
+    Types of methods to learn a policy:
+
+        - Monte Carlo: learning at the end of the episode. 
+        - TD Learning: learning at each step.
