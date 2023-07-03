@@ -27,3 +27,4 @@ In Deep Q-Learning, during the training phase, instead of updating the Q-value o
 
 # References
 - [Playing Atari with Deep Reinforcement Learning](https://www.cs.toronto.edu/%7Evmnih/docs/dqn.pdf)
+- [Human-level control through deep reinforcement learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
