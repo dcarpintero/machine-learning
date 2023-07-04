@@ -26,5 +26,5 @@ In Deep Q-Learning, during the training phase, instead of updating the Q-value o
 - Double Q-Learning: In traditional Q-Learning, the same Q-value estimation is used for both selecting and evaluating actions, which can lead to overoptimistic value estimates. Double Q-Learning addresses this issue by using two separate value functions. One value function is used to select the best action, while the other is used to evaluate the selected action. 
 
 # References
-- [Playing Atari with Deep Reinforcement Learning](https://www.cs.toronto.edu/%7Evmnih/docs/dqn.pdf)
+- [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602)
 - [Human-level control through deep reinforcement learning](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
