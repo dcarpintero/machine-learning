@@ -21,8 +21,7 @@
 # Deep Reinforcement Learning
 
 - [Introduction](./reinforcement-learning/introduction.md)
-
-
+- [MARL](./reinforcement-learning/MARL.md)
 
 # Credits
 
