@@ -12,7 +12,7 @@ In a centralized learning architecture, a high-level process known as the **expe
 
 ## Self-Play
 
-In self-play, an agent uses previous versions of its own policy as opponents during training, createing a challenging but not overly difficult environment. Self-play serves as a mechanism to bootstrap an opponent and progressively increase its complexity.
+In self-play, an agent uses previous versions of its own policy as opponents during training, creating a challenging but not overly difficult environment. Self-play serves as a mechanism to bootstrap an opponent and progressively increase its complexity.
 
 The primary objective of self-play is to strike a **balance between the skill level and generality of the final policy while ensuring stable learning**. 
 
