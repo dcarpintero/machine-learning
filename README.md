@@ -20,8 +20,9 @@
 
 # Deep Reinforcement Learning
 
-- [Introduction](./reinforcement-learning/introduction.md)
+- [Introduction](./reinforcement-learning/Introduction.md)
 - [Q-Learning](./reinforcement-learning/Q-Learning.md)
+- [Policy Gradient](./reinforcement-learning/Policy-Gradient.md)
 - [MARL](./reinforcement-learning/MARL.md)
 
 # Credits
