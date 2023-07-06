@@ -1,10 +1,10 @@
 # Multi-Agents Reinforcement Learning (MARL)
 
-Multi-Agent Reinforcement Learning (MARL) is a subfield of reinforcement learning that focuses on scenarios where multiple agents interact with each other and the environment. In MARL, the goal is to learn effective policies for each agent, considering the dynamic interactions and interdependencies among them. The agents can be cooperative (work together to maximize a common goal), competitive (compete against each other to maximize individual rewards) or mixed (where some agents need to cooperate to beat an opponent).  
+Multi-Agent Reinforcement Learning (MARL) is a subfield of RL that focuses on scenarios where multiple agents interact with each other and the environment. In MARL, the goal is to learn effective policies for each agent, considering the dynamic interactions and interdependencies among them. The agents can be cooperative (work together to maximize a common goal), competitive (compete against each other to maximize individual rewards) or mixed (where some agents need to cooperate to beat an opponent).  
 
 ## Decentralized Learning
 
-Each agent is trained independently without considering the actions or policies of other agents. The primary idea behind this approach is to treat other agents as part of the environment dynamics rather than as individual agents. However, a significant challenge arises from the **non-stationarity8** introduced to the environment. As other agents interact and make decisions, the underlying Markov decision process undergoes changes over time, creating a dynamic environment. This poses a difficulty for many Reinforcement Learning algorithms that **struggle to converge to a global optimum** in such non-stationary settings.
+Each agent is trained independently without considering the actions or policies of other agents. The primary idea behind this approach is to treat other agents as part of the environment dynamics rather than as individual agents. However, a significant challenge arises from the **non-stationarity** introduced to the environment. As other agents interact and make decisions, the underlying Markov decision process undergoes changes over time, creating a dynamic environment. This poses a difficulty for many Reinforcement Learning algorithms that **struggle to converge to a global optimum** in such non-stationary settings.
 
 ## Centralized Learning
 
