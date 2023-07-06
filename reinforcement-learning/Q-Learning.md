@@ -1,16 +1,16 @@
 # Q-Learning
 
-Q-Learning (also Tabular Q-Learning) is a reinforcement learning algorithm that utilizes a Q-function and a Q-table to learn an optimal policy. The Q-function (Quality-function) is a mathematical function that estimates the expected cumulative rewards for each state-action pair. The Q-table is a data structure that stores the Q-values for all possible state-action pairs in the environment.
+Q-Learning (also Tabular Q-Learning) is a reinforcement learning algorithm that utilizes a Q-function and a Q-table to learn an optimal policy. The Q-function (Quality-function) is a mathematical function that estimates the expected cumulative reward for each state-action pair. The Q-table is a data structure that stores the Q-values for all possible state-action pairs in the environment.
 
 During training, the agent iteratively updates the Q-values in the Q-table based on its experiences. It explores the environment by taking actions, observing rewards, and transitioning to new states. The Q-values in the Q-table are updated using the Bellman equation, which considers the immediate reward, the maximum expected future reward from the next state, and the learning rate (alpha) and discount factor (gamma) parameters. By iteratively updating the Q-values, the agent gradually learns which actions are more likely to yield higher rewards in each state.
 
 As the training progresses, the Q-table is refined, and the Q-values converge towards the optimal values. Once the Q-values are learned, the agent can select actions in a given state by consulting the Q-table and choosing the action with the highest Q-value. This allows the agent to make decisions that maximize the expected cumulative rewards over time.
 
-Using a Q-function and a Q-table in Q-Learning provides a practical way to represent and update the knowledge acquired by the agent. However, it is worth noting that the use of a Q-table becomes infeasible for large state and action spaces due to the exponential growth of memory requirements. In such cases, alternative approaches like function approximation using deep neural networks (as in Deep Q-Networks) can be employed to approximate the Q-values for each possible action at a state.
+Using a Q-function and a Q-table in Q-Learning provides a practical way to represent and update the knowledge acquired by the agent. However, the use of a Q-table becomes infeasible for large state and action spaces due to the exponential growth of memory requirements. In such cases, alternative approaches like function approximation using deep neural networks (as in Deep Q-Networks) can be employed to approximate the Q-values for each possible action at a state.
 
 # Deep Q-Learning
 
-In Deep Q-Learning, during the training phase, instead of updating the Q-value of a state-action pair directly, we create a loss function that compares our Q-value prediction and the Q-target (estimated using the Bellman equation) and uses gradient descent to update the weights of our Deep Q-Network to approximate our Q-values better.
+In Deep Q-Learning, during the training phase, the Q-value of a state-action pair is not updated directly. Instead, a loss function is created to compare the predicted Q-value with the Q-target, which is estimated using the Bellman equation. The weights of the Deep Q-Network are then updated using gradient descent to improve the approximation of the Q-values and infer the optimal policy, π(s).
 
 ## Deep Q-Learning Phases
 
