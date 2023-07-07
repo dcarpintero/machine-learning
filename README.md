@@ -24,6 +24,7 @@
 - [Q-Learning](./reinforcement-learning/Q-Learning.md)
 - [Policy Gradient](./reinforcement-learning/Policy-Gradient.md)
 - [MARL](./reinforcement-learning/MARL.md)
+- [Playing Atari with Deep Reinforcement Learning, DeepMind](./reinforcement-learning/Playing-Atari-with-DeepRL.md)
 
 # Credits
 
