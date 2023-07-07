@@ -1,4 +1,4 @@
-# Q-Learning
+# Tabular Q-Learning
 
 Q-Learning (also Tabular Q-Learning) is a reinforcement learning algorithm that utilizes a Q-function and a Q-table to learn an optimal policy. The Q-function (Quality-function) is a mathematical function that estimates the expected cumulative reward for each state-action pair. The Q-table is a data structure that stores the Q-values for all possible state-action pairs in the environment.
 
