@@ -6,17 +6,18 @@
 
 # Large Language Models (LLMs)
 
-- [Transformer: The Building Block for NLP Models](./Transformer.md)
-- [BERT: Bidirectional Encoder Representations from Transformers](./BERT.md)
-- [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./RoBERTa.md)
-- [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./ALBERT.md)
-- [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](./DistilBERT.md)
-- [GPT-3](./GPT-3.md)
+- [Word and Sentence Embeddings](./llms/Embeddings.md)
+- [Transformer: The Building Block for NLP Models](./llms/Transformer.md)
+- [BERT: Bidirectional Encoder Representations from Transformers](./llms/BERT.md)
+- [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./llms/RoBERTa.md)
+- [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./llms/ALBERT.md)
+- [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](./llms/DistilBERT.md)
+- [GPT-3](./llms/GPT-3.md)
 
 # Generative-AI
 
-- [Diffusion Models](./Diffusion-Models.md)
-- [Fine-Tuning](./FineTuning.md)
+- [Diffusion Models](./gen-ai/Diffusion-Models.md)
+- [Fine-Tuning](./gen-ai/FineTuning.md)
 
 # Deep Reinforcement Learning
 
