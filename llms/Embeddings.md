@@ -1,7 +1,18 @@
-# Word and Sentence Embeddings
+# Embeddings
 
-- Embeddings are vectors of numbers that capture the context, hierarchy and similarity of objects such as words, sentences and documents. 
+- An embedding is a vector (list) of floating point numbers representing text such as words, sentences and documents. 
 
-- In practice, the spatial distances (and sometimes angles) between these vectors capture semantic relations like similarity, opposition, and more. The methods to infer similarity include: dot product, cosine similarity, and euclidean distance; which can be used to find articles that are contextually related but may not share exact keywords.
+- They capture the context, hierarchy and similarity of text strings. 
 
-- Sentence embeddings can be extended to language embeddings, in which the numbers attached to each sentence are language-agnostic. These models are very useful for translation and for searching and understanding text in different languages.
+- The spatial distances (and sometimes angles) between these vectors represent semantic relations. Small distances suggest high relatedness and large distances suggest low relatedness. The methods to infer similarity include: 
+    - dot product;
+    - cosine similarity; 
+    - euclidean distance.
+
+- Embeddings are commonly used for:
+    - Search (where results are ranked by relevance to a query string);
+    - Clustering (where text strings are grouped by similarity);
+    - Recommendations (where items with related text strings are recommended);
+    - Anomaly detection (where outliers with little relatedness are identified);
+    - Diversity measurement (where similarity distributions are analyzed);
+    - Classification (where text strings are classified by their most similar label).
