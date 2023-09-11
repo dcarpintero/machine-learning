@@ -1,18 +1,34 @@
 # Embeddings
 
-- An embedding is a vector (list) of floating point numbers representing text such as words, sentences and documents. 
+- An embedding is a vector (list) of floating point numbers representing data such as words, sentences, documents, images or audio. 
 
-- They capture the context, hierarchy and similarity of text strings. 
+- Said numerical representation captures the context, hierarchy and similarity of the data. 
 
-- The spatial distances (and sometimes angles) between these vectors represent semantic relations. Small distances suggest high relatedness and large distances suggest low relatedness. The methods to infer similarity include: 
-    - dot product;
-    - cosine similarity; 
-    - euclidean distance.
+## Why are they useful?
 
-- Embeddings are commonly used for:
-    - Search (where results are ranked by relevance to a query string);
-    - Clustering (where text strings are grouped by similarity);
-    - Recommendations (where items with related text strings are recommended);
-    - Anomaly detection (where outliers with little relatedness are identified);
-    - Diversity measurement (where similarity distributions are analyzed);
-    - Classification (where text strings are classified by their most similar label).
+- **Dimensionality Reduction**: Embeddings often reduce the dimensionality of the data, making it more manageable.
+
+- **Contextual Relations**: They capture complex relationships between objects, like similarity, hierarchy, and context.
+
+- **Efficiency**: In a high-dimensional space, it becomes easier to perform arithmetic operations that capture semantic meanings (e.g., king - man + woman = queen, in word vectors).
+
+- **Search**: They improve the effectiveness of search algorithms by enabling better matching and ranking based on contextual similarity rather than mere textual or categorical matching.
+
+## Applicability 
+
+- When embedded data is represented as numerical vectors, the spatial distance (and sometimes angles) between two vectors measures their relatedness. Small distances suggest high relatedness and large distances suggest low relatedness. 
+
+This becomes relevant in:
+
+- Search (where results are ranked by relevance to a query string);
+- Clustering (where text strings are grouped by similarity);
+- Recommendations (where items with related text strings are recommended);
+- Anomaly detection (where outliers with little relatedness are identified);
+- Diversity measurement (where similarity distributions are analyzed);
+- Classification (where text strings are classified by their most similar label).
+
+## Methods to Infer Similarity
+
+- **Dot Product**: measures the extent to which two vectors point in the same direction.
+- **Cosine Similarity**: measures the cosine of the angle between two vectors. 
+- **Euclidean Distance**: measures the straight-line distance between two points in a space. 
