@@ -24,7 +24,7 @@ The Transformer follows a stacked encoder-decoder architecture using: Multi-Head
 
 ## Embedding Layer
 
-Before processing text, words are tokenized and converted into numerical representations named tokens. These tokens are then passed through an embedding layer, a trainable vector embedding space, that assigns vectors to each token, encoding their meaning and context. Positional encoding is added (e.g. adding an additional positional vector to the vector of embeddings) to preserve word order information since the model processes each input token in parallel. In other words, adding an additional positional vector to the vector of embeddings results in different embeddings if the order of words changes.
+Before processing text, words are tokenized and converted into numerical representations named tokens. These tokens are then passed through an embedding layer, a trainable vector embedding space, that assigns vectors to each token, encoding their meaning and context. Positional encoding is added (e.g. adding an additional positional vector to the vector of embeddings) to preserve word order information since the model processes each input token in parallel. In other words, adding an additional positional vector to the vector of embeddings results in different embeddings in cases where two sentences share the same words in different order.
 
 ## Encoder
 
