@@ -39,7 +39,7 @@ Soft prompt techniques offer flexibility in adapting language models to multiple
 RLHF (Reinforcement Learning with Human Feedback) is a fine-tuning process used to align Language Models (LLMs) with human preferences. It involves assessing LLM completions using a reward model trained on a human annotated dataset. Through a reinforcement learning algorithm, e.g. the Proximal Policy Optimization (PPO) algorithm, the weights of the LLM are updated according to the assigned rewards. This iterative process is repeated with different prompts and weight updates until the desired alignment is achieved, resulting in a human-aligned LLM.
 
 <p align="center">
-  <img src="img/chatgpt-training.svg" width="800">
+  <img src="../img/chatgpt-training.svg" width="800">
 </p>
 
 <p align="center">ChatGPT RLHF Training (source: https://openai.com/blog/chatgpt)</p>
@@ -50,7 +50,7 @@ To address reward hacking, KL divergence (Kullback-Leibler divergence) is used. 
 
 
 <p align="center">
-  <img src="img/ppo-training.png" width="800">
+  <img src="../img/ppo-training.png" width="800">
 </p>
 
 <p align="center">PPO Training - HuggingFace (source: https://huggingface.co/blog/trl-peft)</p>

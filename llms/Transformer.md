@@ -17,14 +17,14 @@ This approach results in **higher accuracy, improved computational performance, 
 The Transformer follows a stacked encoder-decoder architecture using: Multi-Head Self-Attention Mechanism, and Position-Encoding and Position-Wise Feed Forward Neural Networks.
 
 <p align="center">
-  <img src="img/the-encoder-architecture.png" width="400">
+  <img src="../img/the-encoder-architecture.png" width="400">
 </p>
 
 <p align="center">The Transformer Architecture (source: https://arxiv.org/pdf/1706.03762.pdf)</p>
 
 ## Embedding Layer
 
-Before processing text, words are tokenized and converted into numerical representations named tokens. These tokens are then passed through an embedding layer, a trainable vector embedding space, that assigns vectors to each token, encoding their meaning and context. Positional encoding is added to preserve word order information since the model processes each input token in parallel. 
+Before processing text, words are tokenized and converted into numerical representations named tokens. These tokens are then passed through an embedding layer, a trainable vector embedding space, that assigns vectors to each token, encoding their meaning and context. Positional encoding is added (e.g. adding an additional positional vector to the vector of embeddings) to preserve word order information since the model processes each input token in parallel. In other words, adding an additional positional vector to the vector of embeddings results in different embeddings if the order of words changes.
 
 ## Encoder
 
@@ -32,7 +32,7 @@ The encoder processes the input sequence and produces a sequence of hidden state
 
 The first sublayer is a **multi-head self-attention**. Each attention head in a multi-head attention layer processes a different subset of the input, allowing the model (i) to attend to different patterns or relationships, and (ii) to effectively process long sequences of text by considering multiple aspects of the input simultaneously. In practice, it is intended that each attention head learns (by itself) a different aspect of the language by capturing a contextual dependency. While the number of attention heads included in the attention layer varies from model to model, it is typically in the range of 12-100.
 
-The output is then passed through a **feedforward neural network** and a **softmax layer** where it is normalized to obtain probability scores for each token in the vocabulary. The highest-scoring token is the most likely predicted token, although different selection methods can be employed.
+The output is then passed through a **feedforward neural network** and a **softmax layer** where it is normalized to obtain probability scores for each token in the vocabulary. The highest-scoring token is the most likely predicted token, although different selection methods can be employed. In practice, the softmax layers transform scores into probabilities helping to not get the same answer all the time.
 
 ## Decoder
 
