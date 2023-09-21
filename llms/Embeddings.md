@@ -29,6 +29,9 @@ This becomes relevant in:
 
 ## Methods to Infer Similarity
 
-- **Dot Product**: measures the extent to which two vectors point in the same direction.
-- **Cosine Similarity**: measures the cosine of the angle between two vectors. 
-- **Euclidean Distance**: measures the straight-line distance between two points in a space. 
+- **Dot Product**: measures the product of the magnitudes of two vectors and the cosine of the angle between them. It ranges from -∞ to ∞, where a positive value represents vectors that point in the same direction, 0 represents orthogonal vectors, and a negative value represents vectors that point in opposite directions.
+
+- **Cosine Similarity**: measures the cosine of the angle between two vectors in a vector space. It ranges from -1 to 1, where 1 represents identical vectors, 0 represents orthogonal vectors, and -1 represents vectors that are diametrically opposed.
+
+- **Euclidean Distance**: measures the straight-line distance between two vectors in a vector space. It ranges from 0 to infinity, where 0 represents identical vectors, and larger values represent increasingly dissimilar vectors.
+
