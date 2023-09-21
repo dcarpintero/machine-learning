@@ -13,6 +13,7 @@
 - [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./llms/ALBERT.md)
 - [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](./llms/DistilBERT.md)
 - [GPT-3](./llms/GPT-3.md)
+- [RWKV](./llms/RWKV.md)
 
 # Generative-AI
 
