@@ -8,9 +8,9 @@ RWKV (Receptance Weighted Key Value) is a modified RNN with GPT-level LLM perfor
 
 **Transformer models** have emerged as a powerful alternative to RNNs and CNNs due to their ability to: **handle long-range dependencies** (in contrast to CNNs which are limited to a local context), **and parallelize training** (in contrast to RNNs which are hard to parallelize due to its sequential nature). 
 
-**However, the self-attention mechanism inherent to Transformers (capable of processing and comparing all tokens in parallel) renders its architecture computationally expensive and memory-intensive for tasks involving long input sequences, or in resource-constrained situations**. In practice, the attention mechanism scales quadratically with the length of the sequence to be processed, as the attention scores are computed simultaneously for the entire sequence. This effectively limits the model’s input size (or "context length"). Additionally, because of the attention mechanism, when generating text, transformer models need to keep attention vectors for all previous tokens in memory (in contract to an RNN that only stores a single state).
+**However, the self-attention mechanism inherent to Transformers (capable of processing and comparing all tokens in parallel) renders its architecture computationally expensive and memory-intensive for tasks involving long input sequences, or in resource-constrained situations**. In practice, the attention mechanism scales quadratically with the length of the sequence to be processed, as the attention scores are computed simultaneously for the entire sequence. This effectively limits the model’s input size (or "context length"). Additionally, because of the attention mechanism, when generating text, transformer models need to keep attention vectors for all previous tokens in memory (RNNs store only a single state).
 
-The RMKV model aims to bridge the gap between computational efficiency and expressive capacity by combining the advantages of both RNNs and transformers.
+The RMKV model aims to bridge the gap between computational efficiency and expressive capacity by combining the advantages of both RNNs and Transformers.
 
 ## RwKV Contributions
 
