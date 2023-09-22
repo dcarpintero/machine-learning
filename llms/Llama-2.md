@@ -1,6 +1,10 @@
 # LLaMA 2: Open Foundation and Fine-Tuned Chat Models
 
- Llama 2 is a collection of pretrained and fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70 billion parameters. It is based on the transformer architecture with various improvements:
+ Llama 2 is a collection of pretrained and fine-tuned large language models (LLMs) ranging in scale from 7 billion to 70 billion parameters. 
+ 
+ At its core, LLaMA is an auto-regressive language model, built on the transformer architecture. In practice, it takes a sequence of words as input and predicts the next word, recursively generating text.
+
+Llama 2 features various improvements:
 
  - RMSNorm normalizing function is used to improve the training stability, by normalizing the input of each transformer sub-layer, instead of normalizing the output.
 
@@ -8,9 +12,9 @@
 
  - Absolute positional embeddings are removed and instead rotary positional embeddings (RoPE) are added at each layer of the network.
 
- Llama 2 pretrained models were trained on 2 trillion tokens, and have double the context length than Llama 1. Its fine-tuned models have been trained on over 1 million human annotations.* 
 
-LLaMA is a collection of foundation language models ranging from 7B to 65B parameters. It is based on the transformer architecture with various improvements that were subsequently proposed. The main difference with the original architecture are listed below.
+
+
 
 ![Llama2](../img/llama.jpg)
 *(source: https://ai.meta.com/llama/#inside-the-model)*
