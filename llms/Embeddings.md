@@ -1,8 +1,10 @@
 # Embeddings
 
-- An embedding is a vector (list) of floating point numbers representing data such as words, sentences, documents, images or audio. 
+- An embedding is a vector (list) of floating point numbers representing data such as words, sentences, documents, images or audio. Said numerical representation captures the context, hierarchy and similarity of the data. They can be used for downstream tasks such as classification, clustering, outlier detection and semantic search.
 
-- Said numerical representation captures the context, hierarchy and similarity of the data. 
+- The use of transformer neural networks has enabled to compute embeddings as the average of the  context-aware representations of each token (sub-word), which enables the algorithm to work with novel words and misspelt words.
+
+- In practice a transformer is trained with a process called constractive learning, where pairs of similar sentences are moved together and dissimilar sentences' embeddings apart (typically randomly selected).
 
 ## Why are they useful?
 
