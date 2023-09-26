@@ -39,7 +39,7 @@ This becomes relevant in:
 
 # Dense Retrieval
 
-In practice the set of embeddings is often too large for exhaustive search and its high dimensionality makes pruning difficult to find the nearest dataset embeddings. Therefore, it is common to create an index for the embedded dataset to improve search efficiency and/or use algorithms that perform approximate matches.
+In practice the set of embeddings is often too large (over millions) for exhaustive search and its high dimensionality makes pruning difficult to find the nearest dataset embeddings. Therefore, it is common to create an index for the embedded dataset to improve search efficiency and/or use algorithms that perform approximate matches.
 
 ## Approximate Nearest-Neighbor Vector Search Algorithms
 
@@ -79,4 +79,7 @@ In practice, the re-ranker assigns to each query response pair a relevant  score
 
 - [Understanding and Applying Text Embeddings](https://learn.deeplearning.ai/google-cloud-vertex-ai)
 - [Large Language Models with Semantic Search](https://learn.deeplearning.ai/large-language-models-semantic-search)
+- [Sentence Transformer](https://www.sbert.net/index.html)
 - [Pretrained Transformers for Text Ranking: BERT and Beyond](https://arxiv.org/abs/2010.06467)
+- [Multi-Stage Document Ranking with BERT](https://arxiv.org/abs/1910.14424)
+- [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906)
