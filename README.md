@@ -6,7 +6,7 @@
 
 # Large Language Models (LLMs)
 
-- [Embeddings and Semantic Search](./llms/Embeddings.md)
+- [Embeddings and Semantic Search](./llms/Embeddings-Semantic-Search.md
 - [Transformer: The Building Block for NLP Models](./llms/Transformer.md)
 - [BERT: Bidirectional Encoder Representations from Transformers](./llms/BERT.md)
 - [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./llms/RoBERTa.md)
