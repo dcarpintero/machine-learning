@@ -37,11 +37,27 @@ This becomes relevant in:
 
 - **Euclidean Distance**: measures the straight-line distance between two vectors in a vector space. It ranges from 0 to infinity, where 0 represents identical vectors, and larger values represent increasingly dissimilar vectors.
 
-## Using Embeddings at Scale
+## Dense Retrieval
 
-In practice the set of embeddings is often too large for exhaustive search and its high dimensionality makes pruning difficult to find the nearest dataset embeddings. Therefore, it is common to create an index for the embedded dataset to improve search efficiency by using algorithms that perform approximate matches, e.g.:
+In practice the set of embeddings is often too large for exhaustive search and its high dimensionality makes pruning difficult to find the nearest dataset embeddings. Therefore, it is common to create an index for the embedded dataset to improve search efficiency and/or use algorithms that perform approximate matches.
 
-- [ScaNN: Efficient Vector Similarity Search](https://blog.research.google/2020/07/announcing-scann-efficient-vector.html): a method for efficient vector similarity search at scale. 
-- [FAISS: Facebook AI Similarity Search](https://ai.meta.com/tools/faiss/): a library for efficient similarity search and clustering of dense vectors. 
+### Approximate Nearest-Neighbor Vector Search Algorithms
 
+Only stores the vectors.
+
+- [ScaNN: Efficient Vector Similarity Search](https://blog.research.google/2020/07/announcing-scann-efficient-vector.html) (Google). 
+- [FAISS: Facebook AI Similarity Search](https://ai.meta.com/tools/faiss/) (Meta). 
+- [Annoy: Approximate Nearest Neighbors](https://pypi.org/project/annoy/): It has the ability to use static files as indexes, such that indexes can be shared across processes (Spotify)
+
+### Vector Databases
+
+Stores vectors and texts.
+Easier to update, no need to rebuild the index.
+Allow filtering and more advanced queries.
+
+- [Weaviate](https://weaviate.io/)
+- [Pinecone](https://www.pinecone.io/)
+- [Chroma](https://www.trychroma.com/)
+- [Quadrant](https://qdrant.tech/)
+- [Vespa](https://vespa.ai/)
 
