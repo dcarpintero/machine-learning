@@ -29,11 +29,19 @@ This becomes relevant in:
 - Diversity measurement (where similarity distributions are analyzed);
 - Classification (where text strings are classified by their most similar label).
 
-## Methods to Infer Similarity
+## Basic Methods to Infer Similarity
 
 - **Dot Product**: measures the product of the magnitudes of two vectors and the cosine of the angle between them. It ranges from -∞ to ∞, where a positive value represents vectors that point in the same direction, 0 represents orthogonal vectors, and a negative value represents vectors that point in opposite directions.
 
 - **Cosine Similarity**: measures the cosine of the angle between two vectors in a vector space. It ranges from -1 to 1, where 1 represents identical vectors, 0 represents orthogonal vectors, and -1 represents vectors that are diametrically opposed.
 
 - **Euclidean Distance**: measures the straight-line distance between two vectors in a vector space. It ranges from 0 to infinity, where 0 represents identical vectors, and larger values represent increasingly dissimilar vectors.
+
+## Using Embeddings at Scale
+
+In practice the set of embeddings is often too large for exhaustive search and its high dimensionality makes pruning difficult to find the nearest dataset embeddings. Therefore, it is common to create an index for the embedded dataset to improve search efficiency by using algorithms that perform approximate matches, e.g.:
+
+- [ScaNN: Efficient Vector Similarity Search](https://blog.research.google/2020/07/announcing-scann-efficient-vector.html): a method for efficient vector similarity search at scale. 
+- [FAISS: Facebook AI Similarity Search](https://ai.meta.com/tools/faiss/): a library for efficient similarity search and clustering of dense vectors. 
+
 
