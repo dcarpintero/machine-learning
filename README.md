@@ -12,13 +12,17 @@
 - [RoBERTa: A Robustly Optimized BERT Pretraining Approach](./llms/RoBERTa.md)
 - [ALBERT: A Lite BERT for Self-Supervised Learning of Language Representations](./llms/ALBERT.md)
 - [DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](./llms/DistilBERT.md)
-- [GPT-3](./llms/GPT-3.md)
+- [Retrieval Augmented Generation](./llms/RAG.md)
+
+# Alternatives to the Transformer Architecture
+
 - [RWKV](./llms/RWKV.md)
 
 # Generative-AI
 
 - [Diffusion Models](./gen-ai/Diffusion-Models.md)
 - [Fine-Tuning](./gen-ai/FineTuning.md)
+- [GPT-3](./llms/GPT-3.md)
 
 # Deep Reinforcement Learning
 
