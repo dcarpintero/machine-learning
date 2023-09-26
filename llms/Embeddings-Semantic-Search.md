@@ -62,3 +62,13 @@ Allow filtering and more advanced queries.
 - [Vespa](https://vespa.ai/)
 
 # Rerank
+
+Traditional semantic search consists of a two-part process. First, an initial retrieval mechanism does an approximate sweep over a collection of documents and creates a document list. Then, a re-ranker mechanism will take this candidate document list and re-rank the elements.  
+
+In practice, the re-ranker assigns to each query response pair a relevant  score that indicates how relevant the answer is with respect to the query. And it is trained with many queries and corresponding correct answers (getting high scores) and wrong answers (getting low scores).
+
+# Evaluating Search Systems
+
+- Mean Average Precision (MAP)
+- Mean Reciprocal Rank (MRR)
+- Normalized Discounted Cumulative Gain (NDCG)
