@@ -48,6 +48,8 @@ Only stores the vectors.
 - [ScaNN: Efficient Vector Similarity Search](https://blog.research.google/2020/07/announcing-scann-efficient-vector.html) (Google). 
 - [FAISS: Facebook AI Similarity Search](https://ai.meta.com/tools/faiss/) (Meta). 
 - [Annoy: Approximate Nearest Neighbors](https://pypi.org/project/annoy/): It has the ability to use static files as indexes, such that indexes can be shared across processes (Spotify)
+- Inverted File Index (IVD): Consists of clustering similar documents, then searching in the clusters that are closest to the query.
+- Hierarchical Navigable Small World (HNSW): Consists on starting with a few points, and searching there. Then adding more points at each iteration, and searching in each new space.
 
 ## Vector Databases
 
@@ -72,3 +74,9 @@ In practice, the re-ranker assigns to each query response pair a relevant  score
 - Mean Average Precision (MAP)
 - Mean Reciprocal Rank (MRR)
 - Normalized Discounted Cumulative Gain (NDCG)
+
+# References
+
+- [Understanding and Applying Text Embeddings](https://learn.deeplearning.ai/google-cloud-vertex-ai)
+- [Large Language Models with Semantic Search](https://learn.deeplearning.ai/large-language-models-semantic-search)
+- [Pretrained Transformers for Text Ranking: BERT and Beyond](https://arxiv.org/abs/2010.06467)
